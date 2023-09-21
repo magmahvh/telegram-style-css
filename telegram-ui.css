@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  --telegram-background-color: #131415;
+  --telegram-second-background-color: #18222d;
+  --telegram-dark-second-background-color: #131c25;
+  --telegram-light-second-background-color: #2e3d4e;
+  --telegram-active-background-color: #363e48;
+  --telegram-text-color: #ffffff;
+  --telegram-inactive-text-color: #b0c2d5;
+  --telegram-active-text-color: #ffffff;
+  --telegram-action-text-color: #63bcfa;
+  --telegram-separate-color: #3d3d3f;
+  --telegram-checkbox-background: #213040;
+  --telegram-checkbox-active: #2ea6ff;
+}
+
+.telegram-ui {
+  background-color: var(--telegram-background-color);
+  color: var(--telegram-text-color);
+  font-family: "Open Sans";
+  width: calc(100vw - 40px);
+  min-height: calc(100vh - 40px);
+  padding: 20px;
+}
+.telegram-ui .card-components {
+  margin-bottom: 10px;
+  background-image: linear-gradient(to right top, #2e3d4e, #2a3848, #253341, #212e3b, #1d2935, #1b2732, #1a2430, #18222d, #18222d, #18222d, #18222d, #18222d);
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.telegram-ui .card-components .public {
+  display: none;
+}
+.telegram-ui .card-components:first-child {
+  margin-top: 0px;
+}
+.telegram-ui .card-components h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: var(--telegram-inactive-text-color);
+}
+.telegram-ui .card-components h1 span {
+  color: var(--telegram-active-text-color);
+}
+.telegram-ui .card-components h2 {
+  padding-left: 20px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.telegram-ui .card-components h2 span {
+  color: var(--telegram-inactive-text-color);
+}
+.telegram-ui .card-components input {
+  margin-top: 115px;
+  padding-left: 20px;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  width: 160px;
+  height: 20px;
+}
+.telegram-ui .card-components p {
+  margin-top: 30px;
+  padding-left: 20px;
+  color: var(--telegram-action-text-color);
+}
+.telegram-ui .card-components input:checked ~ .public {
+  display: block;
+}
+.telegram-ui .card-components input:checked ~ .secret {
+  display: none;
+}
+.telegram-ui .card-components .balance {
+  text-align: right;
+  padding-right: 20px;
+  margin-top: -28px;
+  font-size: 22px;
+}
+.telegram-ui .card-components .balance span {
+  font-weight: 600;
+  color: var(--telegram-inactive-text-color);
+}
+.telegram-ui .button-components {
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 20px;
+  margin-top: 5px;
+  background-color: var(--telegram-second-background-color);
+  width: calc(100% - 40px);
+  padding: 15px 20px;
+}
+.telegram-ui .button-components:active {
+  background-color: var(--telegram-active-background-color);
+}
+.telegram-ui .button-components:first-child {
+  margin-top: 0px;
+}
+.telegram-ui .button-components img {
+  width: 40px;
+  height: 40px;
+}
+.telegram-ui .button-components p {
+  line-height: 40px;
+  margin-top: -45px;
+  margin-left: 60px;
+  font-weight: 500;
+}
+.telegram-ui .button-components p span {
+  color: var(--telegram-inactive-text-color);
+}
+.telegram-ui .button-components .additional {
+  line-height: 0;
+  margin-top: -19px;
+  margin-bottom: 19px;
+  text-align: right;
+  color: var(--telegram-inactive-text-color);
+}
+.telegram-ui .after-button-components {
+  margin-left: 15px;
+  filter: brightness(80%);
+  width: calc(100% - 30px);
+  height: 12px;
+  background-color: var(--telegram-second-background-color);
+  border-radius: 0px 0px 15px 15px;
+}
+.telegram-ui .popup-button-components {
+  margin-top: 5px;
+  transition: 0.3s;
+}
+.telegram-ui .popup-button-components:first-child {
+  margin-top: 0px;
+}
+.telegram-ui .popup-button-components input {
+  opacity: 0;
+  z-index: 9999;
+  filter: brightness(100%);
+  cursor: pointer;
+  border-radius: 20px;
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 70px;
+}
+.telegram-ui .popup-button-components .load-more {
+  transition: 0.3s;
+  height: 40px;
+  pointer-events: none;
+}
+.telegram-ui .popup-button-components .show {
+  transition: 0.3s;
+  margin-top: -100px;
+  display: none;
+}
+.telegram-ui .popup-button-components input:checked ~ .load-more {
+  padding: 0 20px;
+  height: 0px;
+  opacity: 0;
+}
+.telegram-ui .popup-button-components input:checked ~ .load-more p {
+  display: none;
+}
+.telegram-ui .popup-button-components input:checked ~ .load-more img {
+  display: none;
+}
+.telegram-ui .popup-button-components input:checked ~ .after-button-components {
+  display: none;
+}
+.telegram-ui .popup-button-components input:checked ~ .show {
+  transition: 0.3s;
+  margin-top: 5px;
+  display: block;
+}
+.telegram-ui .popup-button-components .title {
+  margin-left: 20px;
+  width: calc(100% - 40px);
+  padding-top: 25px;
+  pointer-events: none;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.telegram-ui .popup-button-components .title .hide {
+  margin-top: -25px;
+  text-align: right;
+  color: red;
+  font-size: 20px;
+  filter: invert(100%) hue-rotate(30deg) brightness(90%);
+}
+.telegram-ui .popup-button-components .title .hide .arrow {
+  rotate: 180deg;
+  margin-bottom: -2px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("./images/down-arrow.png");
+  background-size: 100% 100%;
+}
+.telegram-ui .list-components {
+  margin-top: 20px;
+  background-color: var(--telegram-second-background-color);
+  width: 100%;
+  border-radius: 10px;
+}
+.telegram-ui .list-components:first-child {
+  margin-top: 0px;
+}
+.telegram-ui .list-components h1 {
+  padding-top: 15px;
+  margin-left: 20px;
+  color: var(--telegram-inactive-text-color);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  margin-bottom: 5px;
+}
+.telegram-ui .list-components ul {
+  padding: 0;
+  list-style-type: none;
+}
+.telegram-ui .list-components ul li {
+  border-bottom: 1px solid var(--telegram-separate-color);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.telegram-ui .list-components ul li .link-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+.telegram-ui .list-components ul li .link-container img {
+  width: 40px;
+  height: 40px;
+}
+.telegram-ui .list-components ul li .link-container p {
+  font-weight: 500;
+  margin-top: -45px;
+  line-height: 40px;
+  margin-left: 60px;
+}
+.telegram-ui .list-components ul li .button-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+.telegram-ui .list-components ul li .button-container p {
+  margin-top: 5px;
+}
+.telegram-ui .list-components ul li .button-container .button {
+  margin-left: calc(100% - 40px);
+  margin-top: -20px;
+}
+.telegram-ui .list-components ul li .button-container .button input {
+  position: absolute;
+  content: "";
+  opacity: 0;
+  width: 40px;
+  height: 25px;
+}
+.telegram-ui .list-components ul li .button-container .button .checkbox-style {
+  transition: 0.3s;
+  opacity: 1;
+  padding: 2px;
+  width: 36px;
+  height: 21px;
+  background-color: var(--telegram-checkbox-background);
+  border-radius: 50px;
+}
+.telegram-ui .list-components ul li .button-container .button .checkbox-style .circle {
+  transition: 0.3s;
+  border-radius: 21px;
+  width: 21px;
+  height: 21px;
+  background-color: var(--telegram-second-background-color);
+}
+.telegram-ui .list-components ul li .button-container .button input:checked ~ .checkbox-style {
+  background-color: var(--telegram-checkbox-active);
+}
+.telegram-ui .list-components ul li .button-container .button input:checked ~ .checkbox-style .circle {
+  margin-left: calc(100% - 21px);
+}
+.telegram-ui .list-components ul li:last-child {
+  border-bottom: 0;
+  border-radius: 0px 0px 15px 15px;
+}
+.telegram-ui .list-components ul li:active {
+  background-color: var(--telegram-active-background-color);
+}/*# sourceMappingURL=telegram-ui.css.map */
